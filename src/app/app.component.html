@@ -1,16 +1,16 @@
-<!--<form #form="ngForm">-->
-<div>
-    <label for="name">Name</label>
-    <input type="text" [(ngModel)]="name" name="name" #nameVerify="ngModel" required/>
-    <span *ngIf="nameVerify.invalid">Name is required</span>
-</div>
-<br/>
+<form #form="ngForm">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="name" name="name" #nameVerify="ngModel" required/>
+        <span *ngIf="nameVerify.invalid">Name is required</span>
+    </div>
+    <br/>
 
-<div>
-    <label for="email">Email</label>
-    <input type="email" [(ngModel)]="email" #emailVerify="ngModel" email/>
-    <span *ngIf="emailVerify.invalid">Invalid email</span>
-</div>
-<br/>
-<!--</form>-->
-<button type="submit">Submit</button>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]="email" name="email" #emailVerify="ngModel" email/>
+        <span *ngIf="emailVerify.invalid">Invalid email</span>
+    </div>
+    <br/>
+    <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
